@@ -21,7 +21,6 @@ export const getTopPodcasts = async () =>{
 export const getPodcastDetail = async (id ) =>{
   try{
     const response = await api.get(`lookup?id=${id}&media=podcast`)
-    console.log('hola?',response)
     const responseJson = JSON.parse(response.data.contents)
     return responseJson
   }
