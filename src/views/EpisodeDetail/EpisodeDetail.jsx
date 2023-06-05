@@ -17,11 +17,15 @@ const EpisodeDetail = () =>{
   return ( 
     <PodcastLayout  clickHandler={returnToPodcast}>
       <div className={styles.EpisodeDetailWrapper}>
+      {episode && (
+       <>
         <div className={styles.title}>{episode.title}</div>
         <div className={styles.description} dangerouslySetInnerHTML={{ __html: episode?.description }}></div>
         <audio controls className={styles.player}> 
           <source src={episode.playLink.url} type={episode.playLink.type}/>
         </audio>
+       </>
+      )}
       </div>
     </PodcastLayout>)
 }
