@@ -1,0 +1,61 @@
+@import '../../styles/pod-vibes-theme.scss';
+
+.EpisodeListWrapper{
+  background: $primary-color;
+  height: calc(100% - 100px);
+  width: 100%;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 20px;
+  .HeaderWrapper{
+    color: $main-text;
+    border-bottom: 1px solid $secondary-color;
+  }
+  .ElementWrapper{
+    color: $main-text;
+    height: 100%;
+    .EpisodeTable{
+        overflow-x: auto;
+        height: 100%;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      .table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        
+      }
+
+      .table th,
+      .table td {
+        padding: 8px;
+        border-bottom: 1px solid $secondary-color;
+      }
+
+      .table th:first-child,
+      .table td:first-child{
+      text-align: left;
+      }
+
+      .table tbody >tr:hover{
+          background:$secondary-color;
+          cursor: pointer;
+        }
+      .table thead >tr{
+        background: $primary-color;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      .table tbody{
+        overflow-y: scroll; 
+        max-height: 300px; 
+      }
+
+    }
+
+}
