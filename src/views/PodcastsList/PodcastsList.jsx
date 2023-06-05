@@ -33,7 +33,7 @@ const PodcastList = () =>{
   const handleDebouncedFilter = () => {
     if (filterValue !== "") {
       setPodcastsList(
-        podcasts.filter((p) => {
+        podcasts && podcasts.filter((p) => {
           return (
             String(p['im:name'].label)
               .replace("null", "")
