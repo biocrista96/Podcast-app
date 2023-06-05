@@ -4,7 +4,7 @@
   padding: 20px;
   box-sizing: border-box;
   gap: 40px;
-  height: 100%;
+  height: calc(100% - 100px);
   overflow-y: auto;
   display: flex;
   flex-direction: row;
@@ -72,5 +72,10 @@
         font-weight: 300px;
       }
     }
+  }
+
+  .ChildrenWrapper{
+    width: 100%;
+    min-width: 400px;
   }
 }

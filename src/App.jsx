@@ -4,6 +4,7 @@ import './App.scss';
 import HomeLayout from './layout/HomeLayout/HomeLayout';
 import PodcastList from './views/PodcastsList/PodcastsList';
 import PodcastDetail from './views/PodcastDetail/PodcastDetail'
+import EpisodeDetail from './views/EpisodeDetail/EpisodeDetail';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeLayout/>}>
            <Route index element={<PodcastList />} />
-           <Route path={'podcast/:podcastId'} element={<PodcastDetail/> }/>
+           <Route path={'/podcast/:podcastId'} element={<PodcastDetail/> }/>
+           <Route path={'/podcast/:podcastId/episode/:episodeId'} element={<EpisodeDetail/> }/>
           </Route >
 
         </Routes>

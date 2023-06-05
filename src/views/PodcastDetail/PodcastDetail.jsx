@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { getEpisodesActionCreator } from '../../store/PodcastActions';
+import styles from './PodcastDetail.module.scss'
+import EpisodeList from '../../components/EpisodeList/EpisodeList';
 
 
 const PodcastDetail = () =>{
   const dispatch = useDispatch();
 
-  const { podcastDetail } = useSelector((state) => state);
+  const { podcastDetail, episodes } = useSelector((state) => state);
 
   const [podcast, setPodcast] = useState(podcastDetail)
 
@@ -22,8 +24,9 @@ const PodcastDetail = () =>{
 
   return ( 
   <PodcastLayout >
-
-    detalle de el podcast
+    <div className={styles.PodcastDetailWrapper}>
+      <EpisodeList episodeList={episodes}/>
+    </div>
   </PodcastLayout>)
 }
 

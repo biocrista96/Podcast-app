@@ -40,7 +40,7 @@ const PodcastLayout = ({
           </p>
         </div>
       </div>
-      <div>
+      <div className={styles.ChildrenWrapper}> 
         {children}
       </div>
       
