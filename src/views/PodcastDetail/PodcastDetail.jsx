@@ -1,6 +1,5 @@
 import PodcastLayout from '../../layout/PodcastLayout/PodcastLayout'
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { getEpisodesActionCreator } from '../../store/PodcastActions';
 import styles from './PodcastDetail.module.scss'
@@ -12,19 +11,30 @@ const PodcastDetail = () =>{
 
   const { podcastDetail, episodes } = useSelector((state) => state);
 
-  const [podcast, setPodcast] = useState(podcastDetail)
+
+  const [episodesList, setEpisodesList] = useState( episodes)
 
   useEffect(()=>{
    if(podcastDetail){ 
-      setPodcast(podcastDetail)
       dispatch(getEpisodesActionCreator(podcastDetail.id.attributes['im:id']))
     }
   },[podcastDetail])
+
+  useEffect(()=>{
+    if(episodes){
+
+      setEpisodesList(episodes)
+    }
+  },[episodes])
 
 
   return ( 
   <PodcastLayout >
     <div className={styles.PodcastDetailWrapper}>
+      <div className={styles.header}>
+       <span>Episodios: </span> 
+       <span>{episodesList.length}</span>
+      </div>
       <EpisodeList episodeList={episodes}/>
     </div>
   </PodcastLayout>)

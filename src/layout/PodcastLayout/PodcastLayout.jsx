@@ -8,7 +8,8 @@ const PodcastLayout = ({
   podcastImage, 
   podcastName, 
   author, 
-  description})=>{
+  description,
+  clickHandler})=>{
 
     const { podcastDetail } = useSelector((state) => state);
 
@@ -21,7 +22,10 @@ const PodcastLayout = ({
   return(
     <div className={styles.PodcastLayoutWrapper}>
       <div className={styles.PodcastInfo}>
-        <div className={styles.ImageWrapper}>
+        <div 
+          className={styles.ImageWrapper} 
+          onClick={clickHandler && clickHandler}
+          style={{cursor: clickHandler ? 'pointer': 'auto'}}>
           <div className={styles.ImageContainer}>
           {podcast? 
           <img className={styles.PodcastImage} src={podcast['im:image'][2].label} alt={podcast['im:image'][2].label}/> :
@@ -29,7 +33,10 @@ const PodcastLayout = ({
         }
           </div>
         </div>
-        <div className={styles.TitleContainer}>
+        <div 
+          className={styles.TitleContainer} 
+          onClick={clickHandler && clickHandler}
+          style={{cursor: clickHandler ? 'pointer': 'auto'}}>
           <span className={styles.PodcastName}>{podcast['im:name'].label}</span>
           <span className={styles.AuthorName}>Autor: {podcast['im:artist'].label}</span>
         </div>

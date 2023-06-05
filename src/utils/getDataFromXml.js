@@ -25,7 +25,7 @@ const getDataFromXml = (xml) =>{
     let type=children.querySelector('enclosure');
     
     let temporalItem ={
-      id:index,
+      id:index +1,
       title: title ? title.textContent:'',
       description:description ? description.textContent :'',
       creationDate:creationDate?creationDate.textContent:'',
