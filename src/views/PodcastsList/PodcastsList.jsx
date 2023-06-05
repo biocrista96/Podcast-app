@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import PodcastCard from '../../components/PodcastCard/PodcastCard'
 import styles from './PodcastsList.module.scss'
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getpodcastDetailActionCreator } from '../../store/PodcastActions';
 
 const PodcastList = () =>{
 
@@ -14,8 +15,10 @@ const PodcastList = () =>{
   const [podcastsList, setPodcastsList] = useState(podcasts)
 
   const redirectToPodcast = (id)=>{
-    console.log(id)
+    dispatch(getpodcastDetailActionCreator(id))
+    navigate(`podcast/${id}`)
   }
+
   useEffect(()=>{
     setPodcastsList(podcasts)
   },[podcasts])

@@ -38,41 +38,41 @@ export const getPodcastsActionCreator = (updateList) =>{
 
 export const getpodcastDetailActionCreator = (id) =>{
   return async (dispatch) =>{
-    dispatch({type:podcastActions.getPodcastLoading})
-    
-    try{
-      const response = await getPodcastDetail(id); 
-
-      dispatch({
-        type: podcastActions.getPodcastSuccess,
-        payload: response
-      });
-    }catch(error){
-      dispatch({
-        type: podcastActions.getPodcastFailed,
-        payload: error.message
-      });
-    }
+    dispatch({type:podcastActions.getPodcast, payload:id})
   }
 }
 
-export const getEpisodesActionCreator = (url)=>{
+export const getEpisodesActionCreator = (id)=>{
   return async (dispatch) =>{
 
     dispatch({type:podcastActions.getEpisodesLoading})
 
     try{
-      const response = await getEpisodes(url);
-      dispatch({
-        type: podcastActions.getEpisodesSuccess,
-        payload: response
-      });
+      const response = await await getPodcastDetail(id);
+      let podcastUrl= response.results[0].feedUrl
+
+      if(podcastUrl){
+            try{
+          const response = await getEpisodes(podcastUrl);
+          dispatch({
+            type: podcastActions.getEpisodesSuccess,
+            payload: response
+          });
+        }catch(error){
+          dispatch({
+            type: podcastActions.getEpisodesFailed,
+            payload: error.message
+          });
+        }
+      }
     }catch(error){
       dispatch({
         type: podcastActions.getEpisodesFailed,
         payload: error.message
       });
     }
+
+
   }
 }
 

@@ -35,26 +35,18 @@ const podcastReducer = (
         error: action.payload 
       }
     }
-    case podcastActions.getPodcastLoading:{
-      return { 
-        ...state, 
-        isLoading: true, 
-        podcastDetail:null,
-        error: null 
-      }
-    }
-    case podcastActions.getPodcastSuccess:{
-      return { 
-        ...state, 
-        isLoading: false, 
-        podcastDetail: action.payload 
-      }
-    }
-    case podcastActions.getPodcastFailed:{
+    case podcastActions.getPodcast:{
+
+      const podcastsList = state.podcasts
+
+      const podcastDetail = podcastsList.filter(p =>{ 
+        return p.id.attributes['im:id'] === action.payload
+      })[0]
+
       return { 
         ...state, 
         isLoading: false, 
-        error: action.payload 
+        podcastDetail: podcastDetail
       }
     }
     case podcastActions.getEpisodesLoading:{

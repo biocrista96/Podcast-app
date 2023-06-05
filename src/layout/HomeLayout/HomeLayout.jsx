@@ -5,14 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from 'react';
 import { getPodcastsActionCreator} from '../../store/PodcastActions'
 const HomeLayout = ()=>{
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { podcasts } = useSelector((state) => state);
+
+  const redirectToHome = ()=>{
+    navigate('/')
+  }
   useEffect(()=>{
     dispatch(getPodcastsActionCreator())
   },[])
 
   return <div className={styles.HomeWrapper}>
-    <Header/>
+    <Header clickHandler={redirectToHome}/>
     <Outlet />
   </div>
 }

@@ -11,22 +11,34 @@ const getDataFromXml = (xml) =>{
   //recorremos todos los items para extraer de ellos
   //la informacion necesaria para crear el objeto capitulo
   allChildrens.forEach((children, index) =>{
-    let image = children.querySelector('image')
+    let image = children.querySelector('image');
+    let title= children.querySelector('title');
+    let description= children.querySelector('description');
+    let creationDate=children.querySelector('pubDate');
+    let episodeType=children.querySelector('episodeType');
+    let author=children.querySelector('author');
+    let subtitle= children.querySelector('subtitle');
+    let sumary= children.querySelector('summary');
+    let content=children.querySelector('encoded');
+    let duration=children.querySelector('duration');
+    let url=children.querySelector('enclosure');
+    let type=children.querySelector('enclosure');
+    
     let temporalItem ={
       id:index,
-      title: children.querySelector('title').textContent,
-      description: children.querySelector('description').textContent,
-      creationDate:children.querySelector('pubDate').textContent,
-      episodeType:children.querySelector('episodeType').textContent,
-      author:children.querySelector('author').textContent,
+      title: title ? title.textContent:'',
+      description:description ? description.textContent :'',
+      creationDate:creationDate?creationDate.textContent:'',
+      episodeType:episodeType ?episodeType.textContent:'',
+      author:author ? author.textContent:'',
       image: image? image.getAttribute('href'):''  ,
-      subtitle: children.querySelector('subtitle').textContent,
-      sumary: children.querySelector('summary').textContent,
-      content:children.querySelector('encoded').textContent,
-      duration:children.querySelector('duration').textContent,
+      subtitle:subtitle? subtitle.textContent:'',
+      sumary: sumary? sumary.textContent:'',
+      content:content?content.textContent:'',
+      duration:duration?duration.textContent:'',
       playLink:{
-        url:children.querySelector('enclosure').getAttribute('url'),
-        type:children.querySelector('enclosure').getAttribute('type')
+        url:url?url.getAttribute('url'):'',
+        type:type?type.getAttribute('type'):''
       }
     }
     //se agrega cada uno al arreglo vacio

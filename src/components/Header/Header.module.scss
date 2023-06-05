@@ -4,6 +4,7 @@
   width: 100%;
   height: 100px;
   background-color: $primary-color;
+
   .LogoContainer{
     font-size: 100px;
     height: 100%;
@@ -11,6 +12,7 @@
     box-sizing: border-box;
     padding: 24px;
     width: fit-content;
+    cursor: pointer;
   }
   
 }

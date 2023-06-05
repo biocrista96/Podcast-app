@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { NotFound } from '../Icons';
 import styles from './PodcastCard.module.scss';
-
 
 
 const PodcastCard = ({id, podcastImg , podcast, author, clickHandler}) =>{

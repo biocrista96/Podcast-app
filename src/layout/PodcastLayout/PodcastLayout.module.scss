@@ -1,0 +1,76 @@
+@import '../../styles/pod-vibes-theme.scss';
+
+.PodcastLayoutWrapper{
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 40px;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  color: $main-text;
+  .PodcastInfo{
+    background-color: $primary-color;
+    max-width: 400px;
+    min-width: 300px;
+    height: 530px;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .ImageWrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      border-bottom: solid 1px $secondary-color;
+      padding-bottom: 20px;
+      box-sizing: border-box;
+      .ImageContainer{
+        background-color: white;
+        aspect-ratio: 1/ 1;
+        min-width: 200px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon{
+          font-size: 80px;
+        }
+        .PodcastImage{
+          width: 100%;
+          border-radius: 6px;
+          max-width: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+    .TitleContainer{
+      padding: 20px 0px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: solid 1px $secondary-color;
+      .PodcastName{
+        font-size: 18px;
+        font-weight: 600;  
+      }
+      .AuthorName{
+        font-size: 14px;
+        font-weight: 300px;
+      }
+    }
+    .DescriptionContainer{
+      padding-top: 20px;
+      box-sizing: border-box;
+      .DescriptionTitle{
+        font-size: 14px;
+        font-weight: 600px;
+      }
+      .Paragraph{
+        font-size: 14px;
+        font-weight: 300px;
+      }
+    }
+  }
+}
