@@ -10,6 +10,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.7",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
@@ -21,7 +22,8 @@
     "start": "react-scripts start",
     "build": "parcel build src/index.js --no-source-maps --dist-dir podcast-app",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "svgr": "svgr --icon --title-prop --replace-attr-values '#010202=currentColor' --ext jsx -d src/components/Icons src/assets/svg"
   },
   "eslintConfig": {
     "extends": [

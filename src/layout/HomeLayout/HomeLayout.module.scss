@@ -1,0 +1,9 @@
+@import "../../styles/pod-vibes-theme.scss";
+
+.HomeWrapper{
+  height: 100%;
+  background: $main-gradient-color;
+  .logo{
+    font-size: 30px;
+  }
+}
