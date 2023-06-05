@@ -35,11 +35,13 @@ const HomeLayout = ()=>{
 
   useEffect(()=>{
     dispatch(getLastTimeRequestedActionCreator())
+  },[])
 
+  useEffect(()=>{
     if(lasTimeRequested){
       setRefresStorage(hasPassed24Hours(lasTimeRequested))
     }
-  },[])
+  },[lasTimeRequested])
 
   useEffect(()=>{
     if(refreshStorage){
