@@ -92,7 +92,7 @@ export const getLastTimeRequestedActionCreator = () =>{
   return (dispatch)=>{
     const lastTime = localStorage.getItem(localStorageLastTime);
     dispatch({
-      type:podcastActions.setLastTimeRequested,
+      type:podcastActions.getLasTimeRequested,
       payload: new Date(lastTime)
     })
   }
