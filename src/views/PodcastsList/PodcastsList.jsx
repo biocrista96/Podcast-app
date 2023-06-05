@@ -14,7 +14,7 @@ const PodcastList = () =>{
 
   const { podcasts } = useSelector((state) => state);
 
-  const [podcastsList, setPodcastsList] = useState(podcasts);
+  const [podcastsList, setPodcastsList] = useState([]);
   const [filterValue, setFilterValue] = useState("");
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -67,7 +67,7 @@ const PodcastList = () =>{
     </div>
     <div className={styles.ListContainer}>
       {
-        podcastsList.map(podcast =>{
+        podcastsList &&podcastsList.map(podcast =>{
           const id = podcast.id.attributes['im:id']
           return (
                 <PodcastCard 
