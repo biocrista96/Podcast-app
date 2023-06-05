@@ -9,6 +9,9 @@ const podcastActions = {
   getEpisodesSuccess : "GET_EPISODES_SUCCESS_ACTION",
   getEpisodesFailed : "GET_EPISODES_FAILED_ACTION",
 
+  setEpisode : "SET_EPISODE_ACTION",
+  cleanEpisode: "CLEAN_EPISODE_ACTION",
+
   setLastTimeRequested: 'SET_LAST_TIME_REQUESTED',
   getLasTimeRequested: 'GET_LAST_TIME_REQUESTED'
 

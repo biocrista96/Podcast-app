@@ -2,12 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from './EpisodeList.module.scss'
 
-const EpisodeList = ({episodeList}) =>{
+const EpisodeList = ({episodeList, clickHandler}) =>{
   const navigate = useNavigate();
   const { podcastDetail } = useSelector((state) => state);
 
   const navigateToEpisode = (id)=>{
     const podcastId = podcastDetail.id.attributes['im:id']
+    clickHandler(id)
     navigate(`/podcast/${podcastId}/episode/${id}`)
   }
 
@@ -37,7 +38,7 @@ const EpisodeList = ({episodeList}) =>{
                 <tr key={episode.id} onClick={()=>navigateToEpisode(episode.id)}>
                   <td>{episode.title}</td>
                   <td>{formatDate(episode.creationDate)}</td>
-                  <td>duration</td>
+                  <td>{episode.duration}</td>
                 </tr>
             )
           })

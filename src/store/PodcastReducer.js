@@ -6,6 +6,7 @@ const initialState = {
   podcasts: [],
   podcastDetail: null,
   episodes: [],
+  episode:null,
   lasTimeRequested:null
 };
 
@@ -81,6 +82,23 @@ const podcastReducer = (
       return { 
         ...state, 
         lasTimeRequested: action.payload
+      }
+    }
+    case podcastActions.setEpisode:{
+      const episodesList = state.episodes
+
+      const episodeDetail = episodesList.filter(p =>{ 
+        return p.id === action.payload
+      })[0]
+      return{
+        ...state,
+        episode:episodeDetail
+      }
+    }
+    case podcastActions.cleanEpisode:{
+      return { 
+        ...state, 
+        episode:null
       }
     }
     default:

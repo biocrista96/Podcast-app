@@ -77,7 +77,7 @@ export const getEpisodesActionCreator = (id)=>{
 }
 
 export const setLastTimeRequestedActionCreator = () =>{
-  return async (dispatch)=>{
+  return (dispatch)=>{
     localStorage.setItem(localStorageLastTime, String( new Date()));
     dispatch({
       type:podcastActions.setLastTimeRequested,
@@ -89,12 +89,28 @@ export const setLastTimeRequestedActionCreator = () =>{
 
 
 export const getLastTimeRequestedActionCreator = () =>{
-  return async (dispatch)=>{
+  return (dispatch)=>{
     const lastTime = localStorage.getItem(localStorageLastTime);
     dispatch({
       type:podcastActions.setLastTimeRequested,
       payload: new Date(lastTime)
     })
   }
+}
 
+export const setEpisodeActionCreator = (id) =>{
+  return (dispatch) =>{
+    dispatch({
+      type:podcastActions.setEpisode,
+      payload:id
+    })
+  }
+}
+
+export const cleanEpisodeActionCreator = ()=>{
+  return (dispatch) =>{
+    dispatch({
+      type:podcastActions.cleanEpisode,
+    })
+  }
 }
