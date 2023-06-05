@@ -92,7 +92,7 @@ const podcastReducer = (
       }
     }
     default:
-      break;
+      return state;
   }
 }
 

@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route,Routes } from "react-router-dom";
 import './App.scss';
 import HomeLayout from './layout/HomeLayout/HomeLayout';
 import PodcastList from './views/PodcastsList/PodcastsList';
+import PodcastDetail from './views/PodcastDetail/PodcastDetail'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeLayout/>}>
            <Route index element={<PodcastList />} />
-           
+           <Route path={'podcast/:podcastId'} element={<PodcastDetail/> }/>
           </Route >
 
         </Routes>

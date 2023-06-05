@@ -10,7 +10,7 @@ const PodcastCard = ({id, podcastImg , podcast, author, clickHandler}) =>{
     <div className={styles.PodcastCardWraper} onClick={()=>clickHandler(id)}>
       <div className={styles.ImageContainer}>
         {podcastImg ? 
-          <img src={podcastImg} alt={podcastImg}/> :
+          <img className={styles.PodcastImage} src={podcastImg} alt={podcastImg}/> :
           <NotFound className={styles.icon} />
         }
 
