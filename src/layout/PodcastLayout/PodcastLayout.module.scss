@@ -64,6 +64,7 @@
     .DescriptionContainer{
       padding-top: 20px;
       box-sizing: border-box;
+
       .DescriptionTitle{
         font-size: 14px;
         font-weight: 600px;
@@ -71,6 +72,8 @@
       .Paragraph{
         font-size: 14px;
         font-weight: 300px;
+        height: 30%;
+        overflow-y: auto;
       }
     }
   }
