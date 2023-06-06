@@ -31,8 +31,8 @@ export const getPodcastDetail = async (id ) =>{
 
 export const getEpisodes = async (url) =>{
   try{
-    const responseUrl = await axios.get(url)
-
+    const responseUrl = await axios.get(`${allorigins}${url}`)
+    console.log(responseUrl)
     const responseXml = responseUrl.data
     const response = getDataFromXml(responseXml)
 

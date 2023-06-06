@@ -33,7 +33,7 @@ const EpisodeList = ({episodeList, clickHandler}) =>{
           </tr>
         </thead>
         <tbody>
-       {episodeList.map(episode =>{
+       {episodeList &&episodeList.map(episode =>{
             return(
                 <tr key={episode.id} onClick={()=>navigateToEpisode(episode.id)}>
                   <td>{episode.title}</td>

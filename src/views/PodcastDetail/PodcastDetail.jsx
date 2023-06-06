@@ -36,7 +36,7 @@ const PodcastDetail = () =>{
     <div className={styles.PodcastDetailWrapper}>
       <div className={styles.header}>
        <span>Episodios: </span> 
-       <span>{episodesList.length}</span>
+       <span>{episodesList && episodesList.length}</span>
       </div>
       <EpisodeList episodeList={episodes} clickHandler={handleEpisode}/>
     </div>
