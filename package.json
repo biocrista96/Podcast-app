@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "parcel build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "svgr": "svgr --icon --title-prop --replace-attr-values '#010202=currentColor' --ext jsx -d src/components/Icons src/assets/svg"
@@ -48,7 +48,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.10",
     "@parcel/transformer-sass": "^2.8.0",
     "@svgr/cli": "^6.2.1",
-    "buffer": "^6.0.3",
-    "parcel": "^2.8.0"
+    "buffer": "^6.0.3"
   }
 }
