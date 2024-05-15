@@ -1,5 +1,4 @@
 {
-  "source": "src/index.html",
   "name": "podcast-app",
   "version": "0.1.0",
   "private": true,
@@ -50,7 +49,6 @@
     "@parcel/transformer-sass": "^2.8.0",
     "@svgr/cli": "^6.2.1",
     "buffer": "^6.0.3",
-    "parcel": "^2.8.0",
-    "process": "^0.11.10"
+    "parcel": "^2.8.0"
   }
 }
