@@ -4,7 +4,7 @@ import getDataFromXml from "../utils/getDataFromXml";
 const allorigins = "http://api.allorigins.win/get?url=";
 
 const api = axios.create({
-  baseURL: `${allorigins}https://itunes.apple.com/`,
+  baseURL: `https://itunes.apple.com/`,
 });
 
 export const getTopPodcasts = async () => {
