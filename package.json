@@ -1,4 +1,5 @@
 {
+  "source": "src/index.html",
   "name": "podcast-app",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "parcel build src/index.js --no-source-maps --dist-dir build",
+    "build": "parcel build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "svgr": "svgr --icon --title-prop --replace-attr-values '#010202=currentColor' --ext jsx -d src/components/Icons src/assets/svg"
@@ -49,6 +50,7 @@
     "@parcel/transformer-sass": "^2.8.0",
     "@svgr/cli": "^6.2.1",
     "buffer": "^6.0.3",
-    "parcel": "^2.8.0"
+    "parcel": "^2.8.0",
+    "process": "^0.11.10"
   }
 }
