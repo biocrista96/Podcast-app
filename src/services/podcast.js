@@ -12,7 +12,8 @@ export const getTopPodcasts = async () => {
     const response = await api.get(
       `us/rss/toppodcasts/limit=100/genre=1310/json`
     );
-    const responseJson = JSON.parse(response.data.contents);
+    const responseJson = response.data.feed;
+
     return responseJson;
   } catch (error) {
     throw error;
@@ -22,7 +23,7 @@ export const getTopPodcasts = async () => {
 export const getPodcastDetail = async (id) => {
   try {
     const response = await api.get(`lookup?id=${id}&media=podcast`);
-    const responseJson = JSON.parse(response.data.contents);
+    const responseJson = response.data;
     return responseJson;
   } catch (error) {
     console.error(error);
@@ -30,11 +31,9 @@ export const getPodcastDetail = async (id) => {
 };
 
 export const getEpisodes = async (url) => {
-  console.log("hola2");
   try {
-    console.log("aloooo");
     const responseUrl = await axios.get(`${url}`);
-    console.log(responseUrl, "hola?");
+    console.log(responseUrl);
     const responseXml = responseUrl.data;
     const response = getDataFromXml(responseXml);
 

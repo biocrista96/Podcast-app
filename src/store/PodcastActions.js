@@ -13,14 +13,11 @@ export const getPodcastsActionCreator = (updateList) => {
     dispatch({ type: podcastActions.getPodcastsLoading });
 
     try {
-      let response;
-
-      if (updateList) {
+      let response = JSON.parse(localStorage.getItem(localStoragePodcasts));
+      if (updateList || response == null) {
         const callResponse = await getTopPodcasts();
-        response = callResponse.feed.entry;
+        response = callResponse.entry;
         localStorage.setItem(localStoragePodcasts, JSON.stringify(response));
-      } else {
-        response = JSON.parse(localStorage.getItem(localStoragePodcasts));
       }
       dispatch({
         type: podcastActions.getPodcastsSuccess,
@@ -47,11 +44,10 @@ export const getEpisodesActionCreator = (id) => {
 
     try {
       const response = await getPodcastDetail(id);
-
       let podcastUrl = response.results[0].feedUrl;
 
-      if (podcastUrl) {
-        console.log("hola");
+      if ((podcastUrl, "url")) {
+        console.log(podcastUrl);
         try {
           const response = await getEpisodes(podcastUrl);
           console.log(response);
