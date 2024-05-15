@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   overflow-y: hidden;
 }
 
 $primary-color: #25142d;
 $secondary-color: #7b4397;
-$tertiary-color:#dc2430;
+$tertiary-color: #dc2430;
 
-$main-gradient-color: linear-gradient(108deg, rgb(54 28 67) 42%, rgb(101 18 23) 100%);
+$main-gradient-color: linear-gradient(
+  108deg,
+  rgb(54 28 67) 42%,
+  rgb(101 18 23) 100%
+);
 
 $light-color: #ffff;
 
 $main-text: #ffff;
 
-$success-color:#78d64c;
-$danger-color:#fa5568;
-
+$success-color: #78d64c;
+$danger-color: #fa5568;
