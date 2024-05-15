@@ -46,7 +46,7 @@ export const getEpisodesActionCreator = (id) => {
       const response = await getPodcastDetail(id);
       let podcastUrl = response.results[0].feedUrl;
 
-      if ((podcastUrl, "url")) {
+      if (podcastUrl) {
         console.log(podcastUrl);
         try {
           const response = await getEpisodes(podcastUrl);
