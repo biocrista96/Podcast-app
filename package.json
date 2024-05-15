@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "parcel build src/index.js --no-source-maps --dist-dir podcast-app",
+    "build": "parcel build src/index.js --no-source-maps --dist-dir build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "svgr": "svgr --icon --title-prop --replace-attr-values '#010202=currentColor' --ext jsx -d src/components/Icons src/assets/svg"
