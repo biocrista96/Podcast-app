@@ -48,6 +48,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.10",
     "@parcel/transformer-sass": "^2.8.0",
     "@svgr/cli": "^6.2.1",
+    "buffer": "^6.0.3",
     "parcel": "^2.8.0"
   }
 }
